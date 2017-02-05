@@ -6,7 +6,7 @@
     databaseURL: "https://devfest2017-b55a2.firebaseio.com",
     storageBucket: "devfest2017-b55a2.appspot.com",
     messagingSenderId: "869551205329"
-  };
+  }; // end config
   firebase.initializeApp(config);
 
   var header = document.getElementById('header');
@@ -34,7 +34,7 @@
         playgroundRef.on('value', function(snap) {
           playground.value = snap.val();
         }); // end dbRef.on
-      }
+      } // end if
     }); // end auth
   }); // end signInButton event listener
 
@@ -42,7 +42,7 @@
     firebase.auth().signOut().then(function() {
       header.innerText = 'Sign in with google to see the magic.';
       playground.value = 'You need to sign in to play here';
-    });
+    }); // end signout
   }); // end signOutButton
 
   var playground = document.getElementById('playground');
